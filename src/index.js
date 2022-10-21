@@ -1,10 +1,9 @@
 //const validator = require("validator");
 //import validator from "validator";
 //console.log(validator.isEmail("john@gmail.com"));
-
-import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import "./css/style-hexagon.css";
 
 /*
 Loader: Pre procesor - Translate code to code for browser
