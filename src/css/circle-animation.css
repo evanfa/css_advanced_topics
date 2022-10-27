@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #fff;
+    font-family: sans-serif;
+    font-family: "Gill Sans Extrabold", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .hexagon {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    /*border: 4px solid #fff;*/
+    border: 4px solid transparent;
+    border-top: 4px solid #2ae9c9;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container .hexagon::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    background: #2ae9c9;
+    right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgb(40, 133, 117), 0 0 0 6px #0d836f, 0 0 0 9px #1d7070;
+}
+
+.container .hexagon:nth-child(2) {
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #28b13f;
+}
+
+.container .hexagon:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    width: 15px;
+    height: 15px;
+    background: #28b13f;
+    left: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgb(30, 180, 50), 0 0 0 6px #147c22, 0 0 0 9px #357e35;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container .hexagon:nth-child(3) {
+    animation: animate2 4x linear infinite;
+    animation-delay: -3s;
+    position: absolute;
+    top: -66.66px;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #e411cf;
+}
+
+.container .hexagon:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: 12px;
+    width: 15px;
+    height: 15px;
+    background: #e411cf;
+    left: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #e411cf, 0 0 0 6px #741374, 0 0 0 9px #570b4a;
+}
+
+.container-hex {
+    background: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+#hex-grid {
+    height: 100vh;
+    background: #999;
+}
+
+#hex-grid .grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(assets/grid.svg) repeat;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: 500px;
+}
+
+#hex-grid .light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15em;
+    height: 15em;
+    filter: blur(15px);
+    background: linear-gradient(90deg, #335bf4 0%, #2ae9c9 100%);
+    z-index: 0;
+}

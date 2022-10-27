@@ -12,10 +12,10 @@ module.exports = {
         static: {
             directory: path.join(__dirname, "./dist"),
         },
-        port: 8080,
         compress: true,
-        liveReload: false,
+        liveReload: true,
         hot: true,
+        port: 8080,
     },
     plugins: [new HtmlWebpackPlugin({ template: "src/index.html" })],
     module: {
@@ -38,5 +38,5 @@ module.exports = {
         ],
     },
     //minify: production
-    mode: "development",
+    //mode: "development",
 };
